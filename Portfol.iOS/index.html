@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Marios Eleftheriou - Cyber Security Expert & Software Developer Portfolio" />
+    <title>[ mar.iOS ] - Marios Eleftheriou</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Matrix Background -->
+    <canvas id="matrix-canvas"></canvas>
+    
+    <!-- Boot Sequence Overlay -->
+    <div id="boot-sequence">
+        <div class="boot-content">
+            <div class="boot-logo">
+                <div class="neural-logo">
+                    <div class="logo-ring"></div>
+                    <div class="logo-core">M</div>
+                </div>
+                <h1>mar.iOS v3.3.3</h1>
+            </div>
+            <div class="boot-progress">
+                <div class="boot-line">[ OK ] Initializing quantum processors...</div>
+                <div class="boot-line">[ OK ] Loading neural networks...</div>
+                <div class="boot-line">[ OK ] Establishing secure connections...</div>
+                <div class="boot-line">[ OK ] Mounting encrypted filesystems...</div>
+                <div class="boot-line boot-final">[ READY ] Welcome, Marios Eleftheriou</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Desktop Environment -->
+    <div id="desktop" class="hidden">
+        <!-- System Status Bar -->
+        <div class="status-bar">
+            <div class="status-left">
+                <span class="system-time"></span>
+                <span class="system-date"></span>
+            </div>
+            <div class="status-center">
+                <span class="neural-brand">mar.iOS</span>
+            </div>
+            <div class="status-right">
+                <div class="status-indicator cpu">CPU <span>23%</span></div>
+                <div class="status-indicator ram">RAM <span>67%</span></div>
+                <div class="status-indicator net">NET <span class="online">ON</span></div>
+            </div>
+        </div>
+
+        <!-- Main Desktop Area -->
+        <div class="desktop-area">
+            <!-- Desktop Home Screen Elements -->
+            <div class="desktop-home-screen">
+                <!-- Desktop Header -->
+                <div class="desktop-header">
+                    <h1>Welcome to mar.iOS Terminal</h1>
+                    <p>Professional Portfolio Operating System</p>
+                </div>
+
+                <!-- Desktop Grid -->
+                <div class="desktop-grid">
+                    <!-- Skills Overview -->
+                    <div class="desktop-card skills-overview">
+                        <div class="card-header">
+                            <h3>💻 Technical Skills</h3>
+                        </div>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-icon">⚡</div>
+                                <div class="skill-name">C++</div>
+                                <div class="skill-level">Expert</div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">🐍</div>
+                                <div class="skill-name">Python</div>
+                                <div class="skill-level">Advanced</div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">📱</div>
+                                <div class="skill-name">Flutter</div>
+                                <div class="skill-level">Advanced</div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-icon">🐧</div>
+                                <div class="skill-name">Linux</div>
+                                <div class="skill-level">Expert</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- System Information -->
+                    <div class="desktop-card system-info">
+                        <div class="card-header">
+                            <h3>⚙️ System Information</h3>
+                        </div>
+                        <div class="info-list">
+                            <div class="info-item">
+                                <span class="info-label">OS:</span>
+                                <span class="info-value">mar.iOS v3.3.3</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Developer:</span>
+                                <span class="info-value">Marios Eleftheriou</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Uptime:</span>
+                                <span class="info-value desktop-uptime">1 year</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-label">Status:</span>
+                                <span class="info-value status-online">● Online</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Desktop Footer -->
+                <div class="desktop-footer">
+                    <p>Click any window in the taskbar below to get started</p>
+                    <div class="desktop-shortcuts">
+                        <span class="shortcut">Pro Tip: Drag windows around to multitask</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Home Screen Elements -->
+            <div class="mobile-home-screen">
+                <!-- Time and Date Display -->
+                <div class="home-time-widget">
+                    <div class="home-time"></div>
+                    <div class="home-date"></div>
+                </div>
+
+                <!-- Welcome Message when no apps are open -->
+                <div class="mobile-welcome-message" id="mobile-welcome">
+                    <h2>Welcome to mar.iOS</h2>
+                    <p>Like what you see? Click the comms app!</p>
+
+                    <!-- Mobile Info Widgets -->
+                    <div class="mobile-info-widgets">
+                        <div class="mobile-widget">
+                            <div class="widget-header">
+                                <span class="widget-icon">⚡</span>
+                                <span class="widget-title">Skills</span>
+                            </div>
+                            <div class="widget-content mobile-skills-grid">
+                                <div class="mobile-skill-item">
+                                    <div class="skill-icon">⚡</div>
+                                    <div class="skill-name">C++</div>
+                                    <div class="skill-level">Expert</div>
+                                </div>
+                                <div class="mobile-skill-item">
+                                    <div class="skill-icon">🐍</div>
+                                    <div class="skill-name">Python</div>
+                                    <div class="skill-level">Advanced</div>
+                                </div>
+                                <div class="mobile-skill-item">
+                                    <div class="skill-icon">📱</div>
+                                    <div class="skill-name">Flutter</div>
+                                    <div class="skill-level">Advanced</div>
+                                </div>
+                                <div class="mobile-skill-item">
+                                    <div class="skill-icon">🐧</div>
+                                    <div class="skill-name">Linux</div>
+                                    <div class="skill-level">Expert</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mobile-widget">
+                            <div class="widget-header">
+                                <span class="widget-icon">💻</span>
+                                <span class="widget-title">System Info</span>
+                            </div>
+                            <div class="widget-content">
+                                <div class="info-row">
+                                    <span>Experience:</span>
+                                    <span>1 year</span>
+                                </div>
+                                <div class="info-row">
+                                    <span>Status:</span>
+                                    <span class="status-online">● Online</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Profile Card Widget -->
+                <div class="home-profile-card">
+                    <div class="profile-avatar-small">
+                        <img src="assets/my_photo.webp" alt="Marios" />
+                        <div class="online-indicator"></div>
+                    </div>
+                    <div class="profile-info-brief">
+                        <h3>Marios Eleftheriou</h3>
+                        <p>Software Developer</p>
+                        <div class="status-indicators">
+                            <span class="indicator">💻 Coding</span>
+                            <span class="indicator">🚀 Available</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats Widget -->
+                <div class="home-stats-widget">
+                    <div class="stat-item">
+                        <div class="stat-icon">📊</div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="projects-count">3</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">💡</div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="experience-years">5+</div>
+                            <div class="stat-label">Years Exp</div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">⚡</div>
+                        <div class="stat-content">
+                            <div class="stat-number" id="active-status">100%</div>
+                            <div class="stat-label">Active</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity Widget -->
+                <div class="home-activity-widget">
+                    <h4>Recent Activity</h4>
+                    <div class="activity-list">
+                        <div class="activity-item">
+                            <div class="activity-icon">🔧</div>
+                            <div class="activity-text">Updated portfolio design</div>
+                            <div class="activity-time">2h ago</div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">💻</div>
+                            <div class="activity-text">Deployed new features</div>
+                            <div class="activity-time">1d ago</div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">📱</div>
+                            <div class="activity-text">Mobile optimization</div>
+                            <div class="activity-time">2d ago</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Welcome Message -->
+                <div class="home-welcome-message">
+                    <h2>Welcome to mar.iOS</h2>
+                    <p>Tap any app below to explore my portfolio</p>
+                    <div class="welcome-arrow">👇</div>
+                </div>
+            </div>
+            <!-- Terminal Window (Main) -->
+            <div class="window terminal-window active" id="terminal-main">
+                <div class="window-header">
+                    <div class="window-controls">
+                        <span class="control minimize"></span>
+                        <span class="control maximize"></span>
+                        <span class="control close"></span>
+                    </div>
+                    <div class="window-title">root@mari-os: ~/portfolio</div>
+                </div>
+                <div class="window-content">
+                    <div class="terminal-output">
+                        <div class="terminal-line">
+                            <span class="prompt">root@mari-os:~$</span> <span class="command">whoami</span>
+                        </div>
+                        <div class="terminal-response">
+                            <div class="ascii-art">
+╔═══════════════════════════════════════════════════════════════╗
+║  ███╗   ███╗ █████╗ ██████╗ ██╗ ██████╗ ███████╗              ║
+║  ████╗ ████║██╔══██╗██╔══██╗██║██╔═══██╗██╔════╝              ║
+║  ██╔████╔██║███████║██████╔╝██║██║   ██║███████╗              ║
+║  ██║╚██╔╝██║██╔══██║██╔══██╗██║██║   ██║╚════██║              ║
+║  ██║ ╚═╝ ██║██║  ██║██║  ██║██║╚██████╔╝███████║              ║
+║  ╚═╝     ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝ ╚═════╝ ╚══════╝              ║
+║                                                               ║
+║  ELEFTHERIOU                                                  ║
+╚═══════════════════════════════════════════════════════════════╝
+                            </div>
+                            <div class="user-info">
+                                <div class="info-line"><span class="label">USER:</span> Marios Eleftheriou</div>
+                                <div class="info-line"><span class="label">ROLE:</span> Software Developer & Electronics Engineer</div>
+                                <div class="info-line"><span class="label">CLEARANCE:</span> Level 9 - Quantum Access</div>
+                                <div class="info-line"><span class="label">LOCATION:</span> Digital Realm</div>
+                                <div class="info-line"><span class="label">STATUS:</span> <span class="status-active">ACTIVE</span></div>
+                            </div>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="prompt">root@mari-os:~$</span> <span class="command">cat bio.txt</span>
+                        </div>
+                        <div class="terminal-response bio-text">
+                            <p>Your friendly neighborhood software developer with a love for programming and a knack for electronics. I spend my time (and sometimes late nights) solving problems that bridge the digital and physical worlds.</p>
+                            <p>Whether it's coding, tinkering with circuits, or combining the two, I'm always eager to create solutions that are both smart and functional.</p>
+                        </div>
+                        <div class="terminal-line">
+                            <span class="prompt">root@mari-os:~$</span> <span class="typing-cursor">|</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Window -->
+            <div class="window profile-window" id="profile-window">
+                <div class="window-header">
+                    <div class="window-controls">
+                        <span class="control minimize"></span>
+                        <span class="control maximize"></span>
+                        <span class="control close"></span>
+                    </div>
+                    <div class="window-title">profile.exe - Personnel File</div>
+                </div>
+                <div class="window-content">
+                    <div class="profile-grid">
+                        <div class="profile-avatar">
+                            <div class="avatar-container">
+                                <img src="assets/my_photo.webp" alt="Marios Eleftheriou" />
+                                <div class="avatar-status"></div>
+                            </div>
+                        </div>
+                        <div class="profile-data">
+                            <h3 class="profile-title">CLASSIFIED PROFILE</h3>
+                            <div class="data-matrix">
+                                <div class="data-row">
+                                    <span class="data-label">NAME:</span>
+                                    <span class="data-value">Marios Eleftheriou</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="data-label">SPECIALIZATION:</span>
+                                    <span class="data-value">C++, Python, Flutter, Linux Systems</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="data-label">EXPERIENCE:</span>
+                                    <span class="data-value">Ianus Technologies</span>
+                                </div>
+                                <div class="data-row">
+                                    <span class="data-label">EDUCATION:</span>
+                                    <span class="data-value">Information Technology Degree</span>
+                                </div>
+                            </div>
+                            <div class="profile-description">
+                                <p>With a degree in Information Technology and experience working on large-scale projects in the tech industry, I've had the opportunity to dive deep into the world of software development. My day-to-day work involves using languages like C++, C, and Python in a Linux-based environment. I also develop mobile apps with Flutter and have worked on projects like creating a chess game using Unity.</p>
+
+                                <p>What truly drives me in my career is the joy I find in discovering solutions to complex issues. Whether it's optimizing code, developing new features, or debugging intricate issues, I relish the process of finding solutions and making things work efficiently.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Projects Window -->
+            <div class="window projects-window" id="projects-window">
+                <div class="window-header">
+                    <div class="window-controls">
+                        <span class="control minimize"></span>
+                        <span class="control maximize"></span>
+                        <span class="control close"></span>
+                    </div>
+                    <div class="window-title">projects.db - Operation Archives</div>
+                </div>
+                <div class="window-content">
+                    <!-- Project Tabs -->
+                    <div class="project-tabs">
+                        <div class="tab-item active" data-tab="completed">
+                            <span class="tab-icon">📁</span>
+                            <span class="tab-text">COMPLETED_PROJECTS</span>
+                        </div>
+                        <div class="tab-item" data-tab="ongoing">
+                            <span class="tab-icon">⚡</span>
+                            <span class="tab-text">ONGOING_PROJECTS</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Tab Content -->
+                    <div class="tab-content">
+                        <!-- Completed Projects Tab -->
+                        <div class="tab-pane active" id="completed-tab">
+                            <div class="projects-grid">
+                                <div class="project-card" data-project="chess">
+                                    <div class="project-header">
+                                        <img src="assets/pawn.webp" alt="Chess Game" />
+                                        <div class="project-info">
+                                            <h3>STRATEGIC_CHESS_ENGINE</h3>
+                                            <div class="project-status">
+                                                <span class="status-indicator active"></span>
+                                                <span>COMPLETED</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-description">
+                                        <p>An interactive chess game built with Unity featuring intelligent AI opponents, smooth animations, and classic chess gameplay. Perfect for strategy enthusiasts and chess lovers.</p>
+                                    </div>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">Unity</span>
+                                        <span class="tech-tag">C#</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="https://chknuggt.itch.io/chessgame" target="_blank" class="action-btn">
+                                            PLAY GAME
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="project-card" data-project="water">
+                                    <div class="project-header">
+                                        <img src="assets/waterfilternet.webp" alt="Water Filters" />
+                                        <div class="project-info">
+                                            <h3>HYDRO_FILTER_SYSTEM</h3>
+                                            <div class="project-status">
+                                                <span class="status-indicator active"></span>
+                                                <span>OPERATIONAL</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-description">
+                                        <p>Santis Water Filters website - a comprehensive platform for high-quality water filtration systems, featuring detailed product catalogs and user-friendly inquiry systems.</p>
+                                    </div>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">HTML</span>
+                                        <span class="tech-tag">CSS</span>
+                                        <span class="tech-tag">WordPress</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="https://waterfilternet.com/" target="_blank" class="action-btn">
+                                            SEE WEBSITE
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="project-card" data-project="grace">
+                                    <div class="project-header">
+                                        <img src="assets/timelessgraceaesthetics.webp" alt="Timeless Grace" />
+                                        <div class="project-info">
+                                            <h3>AESTHETIC_INTERFACE</h3>
+                                            <div class="project-status">
+                                                <span class="status-indicator enhanced"></span>
+                                                <span>ENHANCED</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-description">
+                                        <p>Timeless Grace aesthetics company website with modern responsive design, featuring an intuitive booking system and elegant user interface.</p>
+                                    </div>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">HTML</span>
+                                        <span class="tech-tag">CSS</span>
+                                        <span class="tech-tag">WordPress</span>
+                                    </div>
+                                    <div class="project-actions">
+                                        <a href="https://timelessgraceaesthetics.com/" target="_blank" class="action-btn">
+                                            SEE WEBSITE
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Ongoing Projects Tab -->
+                        <div class="tab-pane" id="ongoing-tab">
+                            <div class="ongoing-grid">
+                                <div class="project-card" data-project="duck">
+                                    <div class="project-header">
+                                        <img src="assets/waterfilternetapp.webp" alt="Duck Ventures" />
+                                        <div class="project-info">
+                                            <h3>WaterFilterNetApp</h3>
+                                            <div class="project-status">
+                                                <span class="status-indicator ongoing"></span>
+                                                <span>IN_DEVELOPMENT</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="project-description">
+                                        <p>WaterFilterNet Cyprus is a modern app built with Flutter that helps users discover, compare, and order premium water filtration systems. Designed for convenience, it brings clean water solutions closer to every home and business in Cyprus.</p>
+                                    </div>
+                                    <div class="project-tech">
+                                        <span class="tech-tag">Flutter</span>
+                                        <span class="tech-tag">Dart</span>
+                                        <span class="tech-tag">Firebase</span>
+                                    </div>
+                                    <div class="project-actions">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Communications Window -->
+            <div class="window communications-window" id="communications-window">
+                <div class="window-header">
+                    <div class="window-controls">
+                        <span class="control minimize"></span>
+                        <span class="control maximize"></span>
+                        <span class="control close"></span>
+                    </div>
+                    <div class="window-title">secure_comm.exe - Encrypted Channels</div>
+                </div>
+                <div class="window-content">
+                    <div class="comm-header">
+                        <h3>CONTACT ME</h3>
+                        <div class="encryption-status">
+                            <span class="encryption-light"></span>
+                            <span>ACTIVE</span>
+                        </div>
+                    </div>
+                    
+                    <form class="secure-form" id="contact-form">
+                        <input type="hidden" name="access_key" value="25020467-e508-49c7-b4b0-b6abd9d44e6d" />
+                        
+                        <div class="form-group">
+                            <label for="name">SENDER_ID:</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your identifier..." />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">EMAIL:</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@domain.com" required />
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">MESSAGE:</label>
+                            <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="transmit-btn">
+                            <span class="btn-text">SEND</span>
+                            <div class="btn-loader"></div>
+                        </button>
+                    </form>
+
+                    <div class="contact-channels">
+                        <h4>ALTERNATIVE CHANNELS</h4>
+                        <div class="channel-list">
+                            <div class="channel-item">
+                                <span class="channel-icon">📧</span>
+                                <span class="channel-info">marioselef03@gmail.com</span>
+                            </div>
+                            <div class="channel-item">
+                                <span class="channel-icon">📱</span>
+                                <span class="channel-info">+359877758122</span>
+                            </div>
+                            <div class="channel-item">
+                                <a href="https://www.linkedin.com/in/marios-eleftheriou-59b399339/" target="_blank">
+                                    <span class="channel-icon">🔗</span>
+                                    <span class="channel-info">LinkedIn Network</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- System Monitor -->
+            <div class="system-monitor" id="system-monitor">
+                <div class="monitor-header">
+                    <span>SYSTEM_MONITOR.exe</span>
+                    <button class="monitor-toggle">_</button>
+                </div>
+                <div class="monitor-content">
+                    <div class="monitor-section">
+                        <h4>ACTIVE PROCESSES</h4>
+                        <div class="process-list">
+                            <div class="process">mari_core.exe <span>Running</span></div>
+                            <div class="process">matrix_render.dll <span>Active</span></div>
+                            <div class="process">portfolio.app <span>Loaded</span></div>
+                        </div>
+                    </div>
+                    <div class="monitor-section">
+                        <h4>NETWORK STATUS</h4>
+                        <div class="network-info">
+                            <div class="network-item">Firewall: <span class="status-on">ENABLED</span></div>
+                            <div class="network-item">VPN: <span class="status-on">CONNECTED</span></div>
+                            <div class="network-item">Intrusion Detection: <span class="status-on">ACTIVE</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Taskbar -->
+        <div class="taskbar">
+            <div class="taskbar-left">
+                <div class="start-menu">
+                    <div class="neural-icon">
+                        <div class="icon-ring"></div>
+                        <div class="icon-core">M</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="taskbar-center">
+                <div class="app-launcher" data-window="terminal-main">
+                    <div class="app-icon terminal-icon">$</div>
+                    <span>Terminal</span>
+                </div>
+                <div class="app-launcher" data-window="profile-window">
+                    <div class="app-icon profile-icon">👤</div>
+                    <span>Profile</span>
+                </div>
+                <div class="app-launcher" data-window="projects-window">
+                    <div class="app-icon projects-icon">📁</div>
+                    <span>Projects</span>
+                </div>
+                <div class="app-launcher" data-window="communications-window">
+                    <div class="app-icon comm-icon">📡</div>
+                    <span>Comm</span>
+                </div>
+            </div>
+            
+            <div class="taskbar-right">
+                <div class="system-tray">
+                    <div class="tray-icon" title="System Monitor" data-toggle="system-monitor">
+                        <div class="monitor-icon" id="tray-icon"></div>
+                    </div>
+                    <div class="tray-time">
+                        <div class="time-display"></div>
+                        <div class="date-display"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
